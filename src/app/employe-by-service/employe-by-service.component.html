@@ -1,0 +1,77 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="title">Employés par service</h5>
+          
+        </div>
+        <div class="card-body all-icons">
+            <div class="card-body">
+                <form [formGroup]="employeForm">
+                  <div class="form-group row">
+                      <label  class="col-sm-2 col-form-label">Service</label>
+                      <div class="col-sm-8">
+                        <select  class="form-control" styformControlName="service" (change)="loadEmployes($event.target.value)">
+                          <option disabled="disabled">Sélectionnez un service</option>
+                          <option *ngFor="let service of services"  [value]="service.id">{{service.nom}}</option>
+                        </select>
+                      </div>
+                    </div> 
+                   </form>
+            </div>
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h4 class="card-title"> Liste des employes</h4>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class=" text-primary">
+                    <th>
+                      ID
+                    </th>
+                    <th>
+                      NOM
+                    </th>
+                    <th>
+                      PRENOM
+                    </th>
+                    <th>
+                      EMAIL
+                    </th>
+                    <th>
+                      TELEPHONE
+                    </th>
+                    <th>
+                   
+                  </thead>
+                  <tbody >
+                    <tr *ngFor="let employe of employes">
+                      <td>{{employe.id}}</td>
+                      <td>{{employe.nom}}</td>
+                      <td>{{employe.prenom}}</td>
+                      <td>{{employe.email}}</td>
+                      <td>{{employe.telephone}}</td>
+                     
+                    </tr>
+                  </tbody>
+
+                 
+                </table>
+              </div>
+            </div>
+        </div>
+        </div>
+  </div>
+ 
+</div>
+
+
