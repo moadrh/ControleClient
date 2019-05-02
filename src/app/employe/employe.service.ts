@@ -19,6 +19,14 @@ getEmployesByService(id:number): Observable<any>{
   return this.http.get(API_URLS.EMPLOYE_URL+`/find/${id}`);
 }
 
+countEmployesByservice(): Observable<any>{
+  return this.http.get(API_URLS.EMPLOYE_URL+`/count`);
+}
+
+getServicesNames(): Observable<any>{
+  return this.http.get(API_URLS.EMPLOYE_URL+`/names`);
+}
+
 addEmploye(employe:Employe): Observable<any>{
     return this.http.post(API_URLS.EMPLOYE_URL, employe);
 }

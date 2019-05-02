@@ -12,12 +12,11 @@ import { ComponentsModule } from './components/components.module';
 import { AppComponent } from './app.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { EmployeComponent } from './employe/employe.component';
-import { ServiceComponent } from './service/service.component';
-import { EmployeByServiceComponent } from './employe-by-service/employe-by-service.component';
 import { EmployeService } from './employe/employe.service';
 import { ServiceService } from './service/service.service';
 import { EmployeByServiceServiceService } from './employe-by-service/employe-by-service-service.service';
+import { ChartComponent } from './chart/chart.component';
+import { ChartsModule } from 'ng2-charts';
 
 @NgModule({
   imports: [
@@ -27,6 +26,7 @@ import { EmployeByServiceServiceService } from './employe-by-service/employe-by-
     ComponentsModule,
     RouterModule,
     AppRoutingModule,
+    ChartsModule,
     ReactiveFormsModule.withConfig({warnOnNgModelWithFormControl: 'never'}),
     NgbModule,
     ToastrModule.forRoot()

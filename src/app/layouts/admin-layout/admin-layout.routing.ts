@@ -10,11 +10,13 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
 import { UpgradeComponent } from '../../upgrade/upgrade.component';
 import { EmployeByServiceComponent } from '../../employe-by-service/employe-by-service.component';
 import { EmployeComponent } from '../../employe/employe.component';
+import { ChartComponent } from '../../chart/chart.component';
 
 export const AdminLayoutRoutes: Routes = [
     { path: 'dashboard',      component: DashboardComponent },
     { path: 'employe-by-service',      component: EmployeByServiceComponent },
     { path: 'employe',      component: EmployeComponent },
+    { path: 'chart',      component: ChartComponent },
     { path: 'user-profile',   component: UserProfileComponent },
     { path: 'table-list',     component: TableListComponent },
     { path: 'typography',     component: TypographyComponent },
