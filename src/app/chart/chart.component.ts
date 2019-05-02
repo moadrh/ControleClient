@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 import { ServiceService } from '../service/service.service';
 import { Service } from '../shared/Service';
 import { EmployeService } from '../employe/employe.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-chart',
@@ -10,13 +11,6 @@ import { EmployeService } from '../employe/employe.service';
 })
 export class ChartComponent implements OnInit {
 
-
-  constructor(private serviceService: ServiceService, private employeService: EmployeService) { }
-
-  ngOnInit() {
-    this.loadServicesNames();
-    this.loadServicesCounts();
-  }
   public lineChartOptions = {
     scaleShowVerticalLines: false,
     responsive: true
@@ -25,12 +19,18 @@ export class ChartComponent implements OnInit {
   public lineChartType = 'line';
   public lineChartLegend = true;
   public lineChartData = [
-    { data: [], label: 'Nombre' }
-
+    { data: [], label: 'Nombre' },
   ];
 
-  loadServicesNames() {
+  constructor(private serviceService: ServiceService, private employeService: EmployeService) { }
 
+
+  ngOnInit() {
+    this.loadServicesNames();
+    this.loadServicesCounts();
+  }
+
+  loadServicesNames() {
     this.employeService.getServicesNames().subscribe(
       data => { this.lineChartLabels = data },
       error => { console.log('erreurrrrrrrr !') },
@@ -52,7 +52,7 @@ export class ChartComponent implements OnInit {
 
   }
 
- 
+
 
 
 
